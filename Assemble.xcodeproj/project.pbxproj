@@ -15,6 +15,12 @@
 		119B979C261070C7008676C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119B979A261070C7008676C5 /* LaunchScreen.storyboard */; };
 		119B97A7261070C7008676C5 /* AssembleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97A6261070C7008676C5 /* AssembleTests.swift */; };
 		119B97B2261070C7008676C5 /* AssembleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97B1261070C7008676C5 /* AssembleUITests.swift */; };
+		119B97C3261077F1008676C5 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97C2261077F1008676C5 /* RegisterVC.swift */; };
+		119B97CB261078CC008676C5 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97CA261078CC008676C5 /* GroupsVC.swift */; };
+		119B97D02610790E008676C5 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97CF2610790E008676C5 /* CreateGroupVC.swift */; };
+		119B97DB26107A04008676C5 /* OpenGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97DA26107A04008676C5 /* OpenGroupVC.swift */; };
+		119B97E326107B8A008676C5 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97E226107B8A008676C5 /* CreateEventVC.swift */; };
+		119B97E826107BA6008676C5 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97E726107BA6008676C5 /* AddFriendVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		119B97AD261070C7008676C5 /* AssembleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssembleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119B97B1261070C7008676C5 /* AssembleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleUITests.swift; sourceTree = "<group>"; };
 		119B97B3261070C7008676C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		119B97C2261077F1008676C5 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		119B97CA261078CC008676C5 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
+		119B97CF2610790E008676C5 /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		119B97DA26107A04008676C5 /* OpenGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupVC.swift; sourceTree = "<group>"; };
+		119B97E226107B8A008676C5 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		119B97E726107BA6008676C5 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,12 @@
 				119B978F261070C4008676C5 /* AppDelegate.swift */,
 				119B9791261070C4008676C5 /* SceneDelegate.swift */,
 				119B9793261070C4008676C5 /* ViewController.swift */,
+				119B97C2261077F1008676C5 /* RegisterVC.swift */,
+				119B97CA261078CC008676C5 /* GroupsVC.swift */,
+				119B97CF2610790E008676C5 /* CreateGroupVC.swift */,
+				119B97DA26107A04008676C5 /* OpenGroupVC.swift */,
+				119B97E226107B8A008676C5 /* CreateEventVC.swift */,
+				119B97E726107BA6008676C5 /* AddFriendVC.swift */,
 				119B9795261070C4008676C5 /* Main.storyboard */,
 				119B9798261070C7008676C5 /* Assets.xcassets */,
 				119B979A261070C7008676C5 /* LaunchScreen.storyboard */,
@@ -259,8 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				119B9794261070C4008676C5 /* ViewController.swift in Sources */,
+				119B97C3261077F1008676C5 /* RegisterVC.swift in Sources */,
+				119B97D02610790E008676C5 /* CreateGroupVC.swift in Sources */,
+				119B97E826107BA6008676C5 /* AddFriendVC.swift in Sources */,
+				119B97DB26107A04008676C5 /* OpenGroupVC.swift in Sources */,
 				119B9790261070C4008676C5 /* AppDelegate.swift in Sources */,
+				119B97E326107B8A008676C5 /* CreateEventVC.swift in Sources */,
 				119B9792261070C4008676C5 /* SceneDelegate.swift in Sources */,
+				119B97CB261078CC008676C5 /* GroupsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
