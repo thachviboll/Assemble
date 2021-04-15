@@ -7,6 +7,9 @@
 
 import UIKit
 
+class eventCell: UITableViewCell {
+    
+}
 class OpenGroupVC: UIViewController {
 
     override func viewDidLoad() {
