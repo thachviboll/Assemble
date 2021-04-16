@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="BLa-lz-iqN">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventID" rowHeight="240" id="BLa-lz-iqN" customClass="eventCell" customModule="Assemble" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLa-lz-iqN" id="9Rt-gT-3nJ">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-N3-XcQ">
@@ -22,11 +22,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXU-gK-KpS">
-                        <rect key="frame" x="304" y="242" width="52" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Decline"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-T3-eVZ">
                         <rect key="frame" x="20" y="52" width="90" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,14 +64,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E7-yO-gwd">
-                        <rect key="frame" x="59" y="242" width="41" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Going"/>
-                    </button>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="505.79710144927537" y="150.66964285714286"/>
+            <connections>
+                <outlet property="dateLabel" destination="8P4-xO-LtT" id="etB-Ig-KoU"/>
+                <outlet property="descriptionLabel" destination="QqC-W4-HZk" id="0jr-tr-VgK"/>
+                <outlet property="eventNameLabel" destination="uxe-N3-XcQ" id="5z7-ES-lJV"/>
+                <outlet property="locationLabel" destination="vN4-wM-fHR" id="7ny-Uf-ESc"/>
+            </connections>
+            <point key="canvasLocation" x="505.79710144927537" y="130.58035714285714"/>
         </tableViewCell>
     </objects>
 </document>
