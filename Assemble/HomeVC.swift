@@ -1,13 +1,13 @@
 //
-//  RegisterVC.swift
+//  HomeVC.swift
 //  Assemble
 //
-//  Created by Viboll Thach on 3/28/21.
+//  Created by chris chark on 4/18/21.
 //
 
 import UIKit
 
-class RegisterVC: UIViewController {
+class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +15,8 @@ class RegisterVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signUpCompleteButton(_ sender: Any) {
-        performSegue(withIdentifier: "signUpComplete", sender: self)
+    @IBAction func viewGroupsButton(_ sender: Any) {
+        performSegue(withIdentifier: "viewGroups", sender: self)
     }
     
     /*

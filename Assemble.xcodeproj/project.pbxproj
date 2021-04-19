@@ -23,6 +23,7 @@
 		119B97DB26107A04008676C5 /* OpenGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97DA26107A04008676C5 /* OpenGroupVC.swift */; };
 		119B97E326107B8A008676C5 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97E226107B8A008676C5 /* CreateEventVC.swift */; };
 		119B97E826107BA6008676C5 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B97E726107BA6008676C5 /* AddFriendVC.swift */; };
+		164FE8C9262D41800031DB39 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FE8C8262D41800031DB39 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		119B97DA26107A04008676C5 /* OpenGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGroupVC.swift; sourceTree = "<group>"; };
 		119B97E226107B8A008676C5 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		119B97E726107BA6008676C5 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
+		164FE8C8262D41800031DB39 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				119B97E226107B8A008676C5 /* CreateEventVC.swift */,
 				119B97E726107BA6008676C5 /* AddFriendVC.swift */,
 				119B9795261070C4008676C5 /* Main.storyboard */,
+				164FE8C8262D41800031DB39 /* HomeVC.swift */,
 				119B9798261070C7008676C5 /* Assets.xcassets */,
 				119B979A261070C7008676C5 /* LaunchScreen.storyboard */,
 				119B979D261070C7008676C5 /* Info.plist */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119B9794261070C4008676C5 /* ViewController.swift in Sources */,
+				164FE8C9262D41800031DB39 /* HomeVC.swift in Sources */,
 				119B97C3261077F1008676C5 /* RegisterVC.swift in Sources */,
 				119B97D02610790E008676C5 /* CreateGroupVC.swift in Sources */,
 				119B97E826107BA6008676C5 /* AddFriendVC.swift in Sources */,

@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "logIn", sender: self)
     }
     
+    @IBAction func signUpButton(_ sender: Any) {
+        performSegue(withIdentifier: "signUp", sender: self)
+    }
+    
 
 }
 

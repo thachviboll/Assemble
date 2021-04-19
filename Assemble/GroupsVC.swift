@@ -15,7 +15,10 @@ class GroupsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func createGroupButton(_ sender: Any) {
+        performSegue(withIdentifier: "createGroup", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
