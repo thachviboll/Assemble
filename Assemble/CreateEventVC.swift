@@ -23,6 +23,7 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var dateInput: UITextField!
     
     @IBAction func createEventButton(_ sender: Any) {
+        
         performSegue(withIdentifier: "createEventSegue", sender: self)
     }
     
