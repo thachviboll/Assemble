@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,7 +19,16 @@ class ViewController: UIViewController {
     
     @IBAction func LogInButton(_ sender: Any) {
         // Check credentials
-        performSegue(withIdentifier: "logIn", sender: self)
+        if let email = emailTextfield.text, let password = passwordTextfield.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e)
+                } else {
+                    self.performSegue(withIdentifier: "logIn", sender: self)
+                }
+            }
+        }
+        
     }
     
     @IBAction func signUpButton(_ sender: Any) {
