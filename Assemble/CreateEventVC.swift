@@ -29,7 +29,7 @@ class CreateEventVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventSegue") {
             let vc = segue.destination as! OpenGroupVC
-            // need to pass in the user input to event page
+            vc.eventNameList.append(eventNameInput.text ?? <#default value#>)
         }
     }
     /*
