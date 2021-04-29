@@ -23,18 +23,18 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBAction func createEventButton(_ sender: Any) {
         performSegue(withIdentifier: "createEventPageSegue", sender: self)
     }
+    var eventNameList = [String]()
+    var descriptionList = [String]()
+    var locationList = [String]()
+    var dateList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "eventCell", bundle: nil), forCellReuseIdentifier: "eventID")
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
-    var eventNameList = [String]()
-    var descriptionList = [String]()
-    var locationList = [String]()
-    var dateList = [String]()
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventNameList.count
@@ -42,10 +42,10 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: eventCell = tableView.dequeueReusableCell(withIdentifier: "eventID", for: indexPath) as! eventCell
-        cell.eventNameLabel.text = eventNameList[indexPath.row]
-        cell.descriptionLabel.text = descriptionList[indexPath.row]
-        cell.locationLabel.text = locationList[indexPath.row]
-        cell.dateLabel.text = dateList[indexPath.row]
+        cell.eventNameLabel?.text = eventNameList[indexPath.row]
+        cell.descriptionLabel?.text = descriptionList[indexPath.row]
+        cell.locationLabel?.text = locationList[indexPath.row]
+        cell.dateLabel?.text = dateList[indexPath.row]
         return cell
     }
 
