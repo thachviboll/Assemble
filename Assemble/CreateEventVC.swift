@@ -28,20 +28,29 @@ class CreateEventVC: UIViewController {
         }
     }
     
+    var eventNameList = [String]()
+    var descriptionList = [String]()
+    var locationList = [String]()
+    var dateList = [String]()
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventSegue") {
             let vc = segue.destination as! OpenGroupVC
             if (eventNameInput.text != nil) {
-                vc.eventNameList.append(eventNameInput.text!)
+                eventNameList.append(eventNameInput.text!)
+                vc.eventNameList = eventNameList
             }
             if (descriptionInput.text != nil) {
-                vc.descriptionList.append(descriptionInput.text!)
+                descriptionList.append(descriptionInput.text!)
+                vc.descriptionList = descriptionList
             }
             if (locationInput.text != nil) {
-                vc.locationList.append(locationInput.text!)
+                locationList.append(locationInput.text!)
+                vc.locationList = locationList
             }
             if (dateInput.text != nil) {
-                vc.dateList.append(dateInput.text!)
+                dateList.append(dateInput.text!)
+                vc.dateList = dateList
             }
         }
     }

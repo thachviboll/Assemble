@@ -28,6 +28,16 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var locationList = [String]()
     var dateList = [String]()
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "createEventPageSegue") {
+            let vc = segue.destination as! CreateEventVC
+            vc.eventNameList = eventNameList
+            vc.descriptionList = descriptionList
+            vc.locationList = locationList
+            vc.dateList = dateList
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "eventCell", bundle: nil), forCellReuseIdentifier: "eventID")
