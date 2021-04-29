@@ -455,9 +455,11 @@
                         <outlet property="eventNameInput" destination="mHO-TD-DB4" id="u8V-m2-S0H"/>
                         <outlet property="locationInput" destination="yQr-ee-Z4W" id="Wjc-Ra-zkj"/>
                         <segue destination="0va-bX-7Dw" kind="show" identifier="createEventSegue" id="vLz-OG-Ayz"/>
+                        <segue destination="0Po-eS-g4A" kind="unwind" unwindAction="unwindtoGroup:" id="cQN-MV-d5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33e-bh-hPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0Po-eS-g4A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5728.985507246377" y="79.6875"/>
         </scene>
@@ -502,7 +504,7 @@
             <objects>
                 <viewController id="xHM-4C-51p" customClass="HomeVC" customModule="Assemble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nr3-zV-Ny3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-z4-glE">
@@ -566,8 +568,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rOW-Xp-k3w"/>
-        <segue reference="gDB-qf-0k0"/>
+        <segue reference="gOq-i3-kBC"/>
+        <segue reference="jUv-9R-uO6"/>
         <segue reference="vLz-OG-Ayz"/>
     </inferredMetricsTieBreakers>
     <resources>

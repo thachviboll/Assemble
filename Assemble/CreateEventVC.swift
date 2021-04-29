@@ -23,8 +23,9 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var dateInput: UITextField!
     
     @IBAction func createEventButton(_ sender: Any) {
-        
-        performSegue(withIdentifier: "createEventSegue", sender: self)
+        if (eventNameInput.text != "" && dateInput.text != "") {
+            performSegue(withIdentifier: "createEventSegue", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

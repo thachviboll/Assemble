@@ -15,7 +15,6 @@ class eventCell: UITableViewCell {
     
 }
 
-
 class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +22,7 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBAction func createEventButton(_ sender: Any) {
         performSegue(withIdentifier: "createEventPageSegue", sender: self)
     }
+    
     var eventNameList = [String]()
     var descriptionList = [String]()
     var locationList = [String]()
