@@ -81,14 +81,6 @@
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odu-ly-N2q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTk-jY-N29">
-                                <rect key="frame" x="143" y="110" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Temporary buttton"/>
-                                <connections>
-                                    <action selector="tempTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2a-J4-WAm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,7 +90,6 @@
                         <outlet property="passwordTextfield" destination="mv6-KN-3yC" id="iah-iZ-LDT"/>
                         <segue destination="Lg0-8M-Mwf" kind="show" identifier="signUp" id="jot-Yr-9Uf"/>
                         <segue destination="xHM-4C-51p" kind="presentation" identifier="logIn" modalPresentationStyle="fullScreen" id="rOW-Xp-k3w"/>
-                        <segue destination="9kH-O7-jFa" kind="show" identifier="tempSegue" id="jUv-9R-uO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -504,7 +495,7 @@
             <objects>
                 <viewController id="xHM-4C-51p" customClass="HomeVC" customModule="Assemble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nr3-zV-Ny3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-z4-glE">
@@ -568,8 +559,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gOq-i3-kBC"/>
-        <segue reference="jUv-9R-uO6"/>
+        <segue reference="rOW-Xp-k3w"/>
         <segue reference="vLz-OG-Ayz"/>
     </inferredMetricsTieBreakers>
     <resources>

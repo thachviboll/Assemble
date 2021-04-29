@@ -9,11 +9,6 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
-    
-    @IBAction func tempTransition(_ sender: Any) {
-        performSegue(withIdentifier: "tempSegue", sender: self)
-    }
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
