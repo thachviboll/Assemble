@@ -16,6 +16,11 @@ class AddFriendVC: UIViewController {
     }
     
     var friendsList = [String]()
+    var eventNameList = [String]()
+    var descriptionList = [String]()
+    var locationList = [String]()
+    var dateList = [String]()
+    
     @IBOutlet weak var friendTextLabel: UITextField!
     
     @IBAction func addFriendButton(_ sender: Any) {
@@ -31,6 +36,11 @@ class AddFriendVC: UIViewController {
                 friendsList.append(friendTextLabel.text!)
                 vc.friendsList = friendsList
             }
+            
+            vc.eventNameList = eventNameList
+            vc.descriptionList = descriptionList
+            vc.locationList = locationList
+            vc.dateList = dateList
         }
     }
     /*

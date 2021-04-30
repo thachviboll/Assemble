@@ -36,21 +36,25 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var descriptionList = [String]()
     var locationList = [String]()
     var dateList = [String]()
-    
     var friendsList = [String]()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventPageSegue") {
-            let vc = segue.destination as! CreateEventVC
-            vc.eventNameList = eventNameList
-            vc.descriptionList = descriptionList
-            vc.locationList = locationList
-            vc.dateList = dateList
+            let vcE = segue.destination as! CreateEventVC
+            vcE.eventNameList = eventNameList
+            vcE.descriptionList = descriptionList
+            vcE.locationList = locationList
+            vcE.dateList = dateList
+            vcE.friendsList = friendsList
         }
         
         if (segue.identifier == "addFriend") {
-            let vc = segue.destination as! AddFriendVC
-            vc.friendsList = friendsList
+            let vcF = segue.destination as! AddFriendVC
+            vcF.friendsList = friendsList
+            vcF.eventNameList = eventNameList
+            vcF.descriptionList = descriptionList
+            vcF.locationList = locationList
+            vcF.dateList = dateList
         }
         
         if (segue.identifier == "displayFriendsList") {

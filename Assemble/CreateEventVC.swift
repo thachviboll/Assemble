@@ -32,6 +32,7 @@ class CreateEventVC: UIViewController {
     var descriptionList = [String]()
     var locationList = [String]()
     var dateList = [String]()
+    var friendsList = [String]()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventSegue") {
@@ -52,6 +53,8 @@ class CreateEventVC: UIViewController {
                 dateList.append(dateInput.text!)
                 vc.dateList = dateList
             }
+            
+            vc.friendsList = friendsList
         }
     }
     /*
