@@ -15,7 +15,24 @@ class AddFriendVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    var friendsList = [String]()
+    @IBOutlet weak var friendTextLabel: UITextField!
+    
+    @IBAction func addFriendButton(_ sender: Any) {
+        if (friendTextLabel.text != "") {
+            performSegue(withIdentifier: "backFromFriend", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "backFromFriend") {
+            let vc = segue.destination as! OpenGroupVC
+            if (friendTextLabel.text != "") {
+                friendsList.append(friendTextLabel.text!)
+                vc.friendsList = friendsList
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

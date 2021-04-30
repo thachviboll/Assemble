@@ -23,10 +23,16 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         performSegue(withIdentifier: "createEventPageSegue", sender: self)
     }
     
+    @IBAction func addFriendButton(_ sender: Any) {
+        performSegue(withIdentifier: "addFriend", sender: self)
+    }
+    
     var eventNameList = [String]()
     var descriptionList = [String]()
     var locationList = [String]()
     var dateList = [String]()
+    
+    var friendsList = [String]()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventPageSegue") {
@@ -35,6 +41,11 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             vc.descriptionList = descriptionList
             vc.locationList = locationList
             vc.dateList = dateList
+        }
+        
+        if (segue.identifier == "addFriend") {
+            let vc = segue.destination as! AddFriendVC
+            vc.friendsList = friendsList
         }
     }
     

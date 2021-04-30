@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    @IBAction func tempTransition(_ sender: Any) {
+        performSegue(withIdentifier: "testSegue", sender: self)
+    }
     
     @IBAction func LogInButton(_ sender: Any) {
         // Check credentials
