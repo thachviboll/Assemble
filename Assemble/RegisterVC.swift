@@ -29,7 +29,8 @@ class RegisterVC: UIViewController {
                     print(e)
                 } else {
                     //Navigate to the ChatViewController
-                    self.db.collection(K.userCollection).addDocument(data: [K.uid: authResult!.user.uid, K.username: username])
+//                    self.db.collection(K.userCollection).addDocument(data: [K.uid: authResult!.user.uid, K.username: username])
+                    self.db.collection(K.userCollection).document(authResult!.user.uid).setData([K.username : username])
                     self.performSegue(withIdentifier: "signUpComplete", sender: self)
                 }
             }

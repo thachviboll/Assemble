@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateEventVC: UIViewController {
+    
+    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +26,16 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var dateInput: UITextField!
     
     @IBAction func createEventButton(_ sender: Any) {
+        if let eventName = eventNameInput.text, let description = descriptionInput.text, let location = locationInput.text, let date = dateInput.text {
+//            db.collection(K.event).addDocument(data: [K.Event.groupID: groupID!, K.Event.date: date, K.Event.des: description, K.Event.loc: location, K.Event.name: eventName])
+            db.collection(K.groupCollection).document(groupID!).collection(K.Group.events).addDocument(data: [K.Event.groupID: groupID!, K.Event.date: date, K.Event.des: description, K.Event.loc: location, K.Event.name: eventName])
+        }
         if (eventNameInput.text != "" && dateInput.text != "") {
             performSegue(withIdentifier: "createEventSegue", sender: self)
         }
     }
     
+    var groupID : String? = nil
     var eventNameList = [String]()
     var descriptionList = [String]()
     var locationList = [String]()
@@ -37,6 +45,7 @@ class CreateEventVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createEventSegue") {
             let vc = segue.destination as! OpenGroupVC
+            vc.groupID = groupID!
             if (eventNameInput.text != nil) {
                 eventNameList.append(eventNameInput.text!)
                 vc.eventNameList = eventNameList

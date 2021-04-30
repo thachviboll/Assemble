@@ -32,6 +32,7 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     
+    var groupID : String? = nil
     var eventNameList = [String]()
     var descriptionList = [String]()
     var locationList = [String]()
@@ -46,6 +47,7 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             vcE.locationList = locationList
             vcE.dateList = dateList
             vcE.friendsList = friendsList
+            vcE.groupID = groupID
         }
         
         if (segue.identifier == "addFriend") {
@@ -61,6 +63,8 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             let vc = segue.destination as! FriendsListVC
             vc.friendsList = friendsList
         }
+        
+        
     }
     
     override func viewDidLoad() {

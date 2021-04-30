@@ -12,6 +12,7 @@ class CreateGroupVC: UIViewController, UITextFieldDelegate {
     
     let db = Firestore.firestore()
     var members = [String]()
+    var groupID : String? = nil
 
     @IBOutlet weak var groupNameTextfield: UITextField!
     @IBOutlet weak var addMemberTextfield: UITextField!
@@ -23,27 +24,70 @@ class CreateGroupVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func groupFormButton(_ sender: Any) {
-        if let groupName = groupNameTextfield.text, let groupCreator = Auth.auth().currentUser?.email {
+        if let groupName = groupNameTextfield.text, let groupCreator = Auth.auth().currentUser?.uid {
+//            var ref: DocumentReference? = nil
             let ref = db.collection(K.groupCollection).addDocument(data: [K.Group.name: groupName])
-            ref.getDocument { (doc, error) in
-                if let doc = doc, doc.exists {
-                    
+            groupID = ref.documentID
+            self.db.collection(K.userCollection).getDocuments { (querySnapshot, error) in
+                if let e = error {
+                    print("error returning users. \(e)")
+                } else {
+                    var i = 1
                     var dict = [String: String]()
                     dict["member0"] = groupCreator
-                    var i = 1
-                    for name in self.members {
-                        dict["member" + String(i)] = name
-                        i += 1
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            let user = data[K.username] as? String
+                            if self.members.contains(user!) {
+                                dict["member" + String(i)] = doc.documentID
+                                self.db.collection(K.userCollection).document(doc.documentID).collection(K.userG).document(ref.documentID)
+                                i += 1
+                            }
+                        }
+                        self.db.collection(K.groupCollection).document(ref.documentID).collection(K.Group.members).addDocument(data: dict)
                     }
-                    self.db.collection(K.groupCollection).document(doc.documentID).collection(K.Group.members).addDocument(data: dict)
-                } else {
-                    print("Document does not exist")
                 }
             }
+            
+//            ref.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//
+//                    var dict = [String: String]()
+//                    dict["member0"] = groupCreator
+//                    var i = 1
+//                    print(self.members)
+//                    for name in self.members {
+//                        self.db.collection(K.userCollection).getDocuments { (querySnapshot, error) in
+//                            if let e = error {
+//                                print("error returning users. \(e)")
+//                            } else {
+//                                if let snapshotDocuments = querySnapshot?.documents {
+//                                    for doc in snapshotDocuments {
+//                                        let data = doc.data()
+//                                        let user = data[K.username] as? String
+//                                        if user == name {
+//                                            dict["member" + String(i)] = doc.documentID
+//                                            print(dict)
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                        print(i)
+//                        i += 1
+//                    }
+//                    print(dict)
+//                    self.db.collection(K.groupCollection).document(document.documentID).collection(K.Group.members).addDocument(data: dict)
+//                } else {
+//                    print("Document does not exist")
+//                }
+//            }
 //            db.collection(K.groupCollection).document(String(ref)).collection(K.Group.members).addDocument(data: [K.Group.members: groupCreator])
             performSegue(withIdentifier: "createGroupForm", sender: self)
         }
     }
+    
     
     @IBAction func addMemberPressed(_ sender: Any) {
         addMemberTextfield.endEditing(true)
@@ -59,6 +103,13 @@ class CreateGroupVC: UIViewController, UITextFieldDelegate {
         addMemberTextfield.text = ""
 //        need to check if username exists
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "createGroupForm") {
+            let vc = segue.destination as! OpenGroupVC
+            vc.groupID = groupID
+            }
     }
     
     /*
