@@ -27,6 +27,11 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         performSegue(withIdentifier: "addFriend", sender: self)
     }
     
+    @IBAction func openFriendsListButton(_ sender: Any) {
+        performSegue(withIdentifier: "displayFriendsList", sender: self)
+    }
+    
+    
     var eventNameList = [String]()
     var descriptionList = [String]()
     var locationList = [String]()
@@ -45,6 +50,11 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         if (segue.identifier == "addFriend") {
             let vc = segue.destination as! AddFriendVC
+            vc.friendsList = friendsList
+        }
+        
+        if (segue.identifier == "displayFriendsList") {
+            let vc = segue.destination as! FriendsListVC
             vc.friendsList = friendsList
         }
     }

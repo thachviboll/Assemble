@@ -362,6 +362,13 @@
                                     <action selector="addFriendButton:" destination="0va-bX-7Dw" eventType="touchUpInside" id="DcG-xs-cHk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-LF-Ulz">
+                                <rect key="frame" x="169" y="0.0" width="74" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="openFriendsListButton:" destination="0va-bX-7Dw" eventType="touchUpInside" id="AQH-DS-JAg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rtE-NE-Avb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -371,6 +378,7 @@
                         <outlet property="tableView" destination="NVF-dF-UxB" id="Myq-pp-R5y"/>
                         <segue destination="9kH-O7-jFa" kind="show" identifier="createEventPageSegue" id="gDB-qf-0k0"/>
                         <segue destination="zxh-TR-Vwc" kind="show" identifier="addFriend" id="Nhz-hc-sv4"/>
+                        <segue destination="ZpQ-Fd-XyG" kind="show" identifier="displayFriendsList" id="av9-0h-J32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nML-Qk-xSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -471,6 +479,50 @@
                 <exit id="0Po-eS-g4A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5728.985507246377" y="79.6875"/>
+        </scene>
+        <!--Friends ListVC-->
+        <scene sceneID="L1b-DA-MbE">
+            <objects>
+                <viewController id="ZpQ-Fd-XyG" customClass="FriendsListVC" customModule="Assemble" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VMG-HY-QHH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friends List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09T-fg-7T7">
+                                <rect key="frame" x="0.0" y="20" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Nl-s6-Qlp">
+                                <rect key="frame" x="0.0" y="82" width="414" height="760"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="7bs-u3-ndV">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bs-u3-ndV" id="PXE-M5-y30">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pf6-bo-SJV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AvO-d0-wQK"/>
+                    <connections>
+                        <outlet property="friendsListTableView" destination="4Nl-s6-Qlp" id="ODC-ky-AOC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdj-br-Zz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4769.5652173913049" y="872.54464285714278"/>
         </scene>
         <!--Add FriendVC-->
         <scene sceneID="C6i-T5-4Vl">
@@ -592,7 +644,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Nhz-hc-sv4"/>
         <segue reference="rOW-Xp-k3w"/>
         <segue reference="dnn-O9-Jfr"/>
     </inferredMetricsTieBreakers>

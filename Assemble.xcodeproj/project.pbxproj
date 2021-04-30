@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1139F951263B870700DFCD4B /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1139F950263B870700DFCD4B /* FriendsListVC.swift */; };
 		1169A7A32628D84500DCC729 /* groupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1169A7A22628D84500DCC729 /* groupCell.xib */; };
 		1169A7AB2628D8A400DCC729 /* eventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1169A7AA2628D8A400DCC729 /* eventCell.xib */; };
 		119B9790261070C4008676C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B978F261070C4008676C5 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		08530087294F66EA54FF6AEE /* Pods_Assemble_AssembleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assemble_AssembleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB782128F454DCD94BC8985 /* Pods-Assemble-AssembleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assemble-AssembleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Assemble-AssembleUITests/Pods-Assemble-AssembleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F857D03762A44BAF1046474 /* Pods-AssembleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssembleTests.debug.xcconfig"; path = "Target Support Files/Pods-AssembleTests/Pods-AssembleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1139F950263B870700DFCD4B /* FriendsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVC.swift; sourceTree = "<group>"; };
 		1169A7A22628D84500DCC729 /* groupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = groupCell.xib; sourceTree = "<group>"; };
 		1169A7AA2628D8A400DCC729 /* eventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = eventCell.xib; sourceTree = "<group>"; };
 		119B978C261070C4008676C5 /* Assemble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assemble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				1169A7A22628D84500DCC729 /* groupCell.xib */,
 				1169A7AA2628D8A400DCC729 /* eventCell.xib */,
 				2896B55E2633C09100977A4C /* Constants.swift */,
+				1139F950263B870700DFCD4B /* FriendsListVC.swift */,
 			);
 			path = Assemble;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				119B97C3261077F1008676C5 /* RegisterVC.swift in Sources */,
 				119B97D02610790E008676C5 /* CreateGroupVC.swift in Sources */,
 				119B97E826107BA6008676C5 /* AddFriendVC.swift in Sources */,
+				1139F951263B870700DFCD4B /* FriendsListVC.swift in Sources */,
 				119B97DB26107A04008676C5 /* OpenGroupVC.swift in Sources */,
 				119B9790261070C4008676C5 /* AppDelegate.swift in Sources */,
 				119B97E326107B8A008676C5 /* CreateEventVC.swift in Sources */,
