@@ -98,6 +98,7 @@ class GroupsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let cell : groupCell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! groupCell
 //            tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! groupCell
             vc.groupID = cell.groupID.text
+            print(groupIDList)
         }
     }
     
