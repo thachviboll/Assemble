@@ -353,6 +353,7 @@
                         <outlet property="tableView" destination="NVF-dF-UxB" id="Myq-pp-R5y"/>
                         <segue destination="zxh-TR-Vwc" kind="show" identifier="addFriend" id="Nhz-hc-sv4"/>
                         <segue destination="ZpQ-Fd-XyG" kind="show" identifier="displayFriendsList" id="av9-0h-J32"/>
+                        <segue destination="9kH-O7-jFa" kind="show" identifier="createEventPageSegue" id="9e6-8o-vzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nML-Qk-xSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,12 +447,13 @@
                         <outlet property="eventNameInput" destination="mHO-TD-DB4" id="u8V-m2-S0H"/>
                         <outlet property="locationInput" destination="yQr-ee-Z4W" id="Wjc-Ra-zkj"/>
                         <segue destination="0Po-eS-g4A" kind="unwind" unwindAction="unwindtoGroup:" id="cQN-MV-d5h"/>
+                        <segue destination="0va-bX-7Dw" kind="show" identifier="createEventSegue" id="XZL-je-wci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33e-bh-hPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0Po-eS-g4A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6639.130434782609" y="79.6875"/>
+            <point key="canvasLocation" x="5974" y="117"/>
         </scene>
         <!--Friends ListVC-->
         <scene sceneID="L1b-DA-MbE">
@@ -618,7 +620,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rOW-Xp-k3w"/>
-        <segue reference="z8q-0C-Df9"/>
+        <segue reference="G8g-DE-ium"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

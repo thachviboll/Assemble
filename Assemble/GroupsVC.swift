@@ -95,7 +95,9 @@ class GroupsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "groupSegue") {
             let vc = segue.destination as! OpenGroupVC
-            vc.groupID = groupIDList[tableView.indexPathForSelectedRow!.row]
+            let cell : groupCell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! groupCell
+//            tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! groupCell
+            vc.groupID = cell.groupID.text
         }
     }
     
