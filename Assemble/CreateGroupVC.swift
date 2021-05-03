@@ -35,13 +35,14 @@ class CreateGroupVC: UIViewController, UITextFieldDelegate {
                     var i = 1
                     var dict = [String: String]()
                     dict["member0"] = groupCreator
+                    self.db.collection(K.userCollection).document(groupCreator).collection(K.userG).document(ref.documentID).setData(["name": groupName])
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
                             let user = data[K.username] as? String
                             if self.members.contains(user!) {
                                 dict["member" + String(i)] = doc.documentID
-                                self.db.collection(K.userCollection).document(doc.documentID).collection(K.userG).document(ref.documentID)
+                                self.db.collection(K.userCollection).document(doc.documentID).collection(K.userG).document(ref.documentID).setData(["name": groupName])
                                 i += 1
                             }
                         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class eventCell: UITableViewCell {
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -16,6 +17,8 @@ class eventCell: UITableViewCell {
 }
 
 class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +34,7 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         performSegue(withIdentifier: "displayFriendsList", sender: self)
     }
     
-    
+    var currUser : String? = nil
     var groupID : String? = nil
     var eventNameList = [String]()
     var descriptionList = [String]()
@@ -73,6 +76,8 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        currUser = Auth.auth().currentUser?.uid
+        loadEvents()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,6 +95,67 @@ class OpenGroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 240.0
+    }
+    
+    func loadEvents() {
+        db.collection(K.groupCollection).document(groupID!).collection(K.Group.events).addSnapshotListener { (querySnapshot, error) in
+            self.eventNameList = []
+            self.descriptionList = []
+            self.locationList = []
+            self.dateList = []
+            if let e = error {
+                print("There was an issue retrieving data from Firestore. \(e)")
+            } else {
+                if let snapshotDocs = querySnapshot?.documents {
+                    for doc in snapshotDocs {
+                        let data = doc.data()
+                        self.eventNameList.append(data[K.Event.name] as! String)
+                        self.descriptionList.append(data[K.Event.des] as! String)
+                        self.locationList.append(data[K.Event.loc] as! String)
+                        self.dateList.append(data[K.Event.date] as! String)
+                        DispatchQueue.main.async {
+                               self.tableView.reloadData()
+                            let indexPath = IndexPath(row: self.eventNameList.count - 1, section: 0)
+                            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                        }
+                    }
+                    
+                
+            }
+        }
+//        var groupList = [String]()
+//        db.collection(K.userCollection).addSnapshotListener { (querySnapshot, error) in
+//
+////            self.eventNameList = []
+////            self.descriptionList = []
+////            self.locationList = []
+////            self.dateList = []
+////
+//
+//            if let e = error {
+//                print("There was an issue retrieving data from Firestore. \(e)")
+//            } else {
+//                if let snapshotDocuments = querySnapshot?.documents {
+//                    for doc in snapshotDocuments {
+//                        let data = doc.data()
+//                        if doc.documentID == self.currUser {
+//
+//                        }
+//
+////                        if let messageSender = data[K.FStore.senderField] as? String, let messageBody = data[K.FStore.bodyField] as? String {
+////                            let newMessage = Message(sender: messageSender, body: messageBody)
+////                            self.messages.append(newMessage)
+////
+////                            DispatchQueue.main.async {
+////                                   self.tableView.reloadData()
+////                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+////                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+////                            }
+////                        }
+//                    }
+//                }
+//            }
+        }
     }
     
 
